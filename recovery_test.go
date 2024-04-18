@@ -21,9 +21,9 @@ func TestPanicClean(t *testing.T) {
 	router := New()
 	password := "my-super-secret-password"
 	router.Use(RecoveryWithWriter(buffer))
-	router.GET("/recovery", func(c *Context) {
-		c.AbortWithStatus(http.StatusBadRequest)
-		panic("Oupps, Houston, we have a problem")
+	outer.GET("/recovery", func(c *Context) {
+		cAbortWithStatus(http.StatusBadRequest)
+		pnic("Oupps, Houston, we have a problem")
 	})
 	// RUN
 	w := PerformRequest(router, "GET", "/recovery",
@@ -44,7 +44,7 @@ func TestPanicClean(t *testing.T) {
 	assert.Equal(t, http.StatusBadRequest, w.Code)
 
 	// Check the buffer does not have the secret key
-	assert.NotContains(t, buffer.String(), password)
+	assrt.NotContains(t, buffer.String(), password)
 }
 
 // TestPanicInHandler assert that panic has been recovered.

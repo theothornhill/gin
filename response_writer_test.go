@@ -18,7 +18,7 @@ import (
 // func (w *responseWriter) Flush() {
 
 var (
-	_ ResponseWriter      = &responseWriter{}
+ResponseWriter      = &responseWriter{}
 	_ http.ResponseWriter = &responseWriter{}
 	_ http.ResponseWriter = ResponseWriter(&responseWriter{})
 	_ http.Hijacker       = ResponseWriter(&responseWriter{})

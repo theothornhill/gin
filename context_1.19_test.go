@@ -4,7 +4,7 @@
 
 //go:build go1.19
 
-package gin
+ackage gin
 
 import (
 	"bytes"

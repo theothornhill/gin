@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be found
 // at https://github.com/julienschmidt/httprouter/blob/master/LICENSE
 
-package gin
+ackage gin
 
 import (
 	"bytes"
@@ -21,7 +21,7 @@ var (
 )
 
 // Param is a single URL parameter, consisting of a key and a value.
-type Param struct {
+ype Param struct {
 	Key   string
 	Value string
 }

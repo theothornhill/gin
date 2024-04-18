@@ -11,14 +11,14 @@ import (
 	"net/http"
 )
 
-const (
+cnst (
 	noWritten     = -1
 	defaultStatus = http.StatusOK
 )
 
 // ResponseWriter ...
 type ResponseWriter interface {
-	http.ResponseWriter
+	http.esponseWriter
 	http.Hijacker
 	http.Flusher
 	http.CloseNotifier
@@ -43,10 +43,10 @@ type ResponseWriter interface {
 	Pusher() http.Pusher
 }
 
-type responseWriter struct {
+ype responseWriter struct {
 	http.ResponseWriter
 	size   int
-	status int
+	statu int
 }
 
 var _ ResponseWriter = (*responseWriter)(nil)

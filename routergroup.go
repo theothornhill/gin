@@ -24,7 +24,7 @@ var (
 )
 
 // IRouter defines all router handle interface includes single and group router.
-type IRouter interface {
+ype IRouter interface {
 	IRoutes
 	Group(string, ...HandlerFunc) *RouterGroup
 }
